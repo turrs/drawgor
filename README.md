@@ -7,7 +7,7 @@ If your selected number matches the drawn number, you win rewards and gain progr
 ---
 
 ## 🚀 How to Play
-
+Access https://relaxed-semifreddo-da90af.netlify.app/
 1. Choose a number from **1 to 10**.
 2. Pay **0.1 GOR** to enter the current round , you can get faucet here https://faucet.gorbagana.wtf/ .
 3. Every **60 seconds**, a new game lobby is automatically generated.
