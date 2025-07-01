@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Toastify Color Variables */
+:root {
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #07bc0c;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: #e74c3c;
+  --toastify-color-transparent: hsla(0, 0%, 100%, 0.7);
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+  --toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+  --toastify-color-progress-light: linear-gradient(90deg, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+
+  /* Dragon Theme Colors */
+  --dragon-fire: #ff4500;
+  --dragon-gold: #ffd700;
+  --dragon-emerald: #50c878;
+  --dragon-purple: #8a2be2;
+  --dragon-crimson: #dc143c;
+  --dragon-dark: #1a0f0a;
+  --dragon-shadow: #2d1810;
+}
+
+/* Dragon Theme Background */
+body {
+  background: linear-gradient(135deg, 
+    var(--dragon-dark) 0%, 
+    var(--dragon-shadow) 25%, 
+    #0f0f0f 50%, 
+    var(--dragon-shadow) 75%, 
+    var(--dragon-dark) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Dragon Fire Animation */
+@keyframes dragonFire {
+  0%, 100% { 
+    background-position: 0% 50%; 
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    background-position: 100% 50%; 
+    filter: hue-rotate(45deg);
+  }
+  50% { 
+    background-position: 100% 100%; 
+    filter: hue-rotate(90deg);
+  }
+  75% { 
+    background-position: 0% 100%; 
+    filter: hue-rotate(135deg);
+  }
+}
+
+/* Dragon Scale Pattern */
+@keyframes dragonScale {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(2deg); }
+}
+
+/* Dragon Glow Effect */
+@keyframes dragonGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px var(--dragon-fire), 0 0 40px var(--dragon-gold), 0 0 60px var(--dragon-fire);
+  }
+  50% { 
+    box-shadow: 0 0 30px var(--dragon-gold), 0 0 50px var(--dragon-fire), 0 0 70px var(--dragon-emerald);
+  }
+}
+
+/* Dragon Breath Effect */
+@keyframes dragonBreath {
+  0% { opacity: 0.7; transform: translateY(0px); }
+  50% { opacity: 1; transform: translateY(-5px); }
+  100% { opacity: 0.7; transform: translateY(0px); }
+}
+
+/* Dragon Wing Flap */
+@keyframes dragonWing {
+  0%, 100% { transform: rotateY(0deg) scale(1); }
+  50% { transform: rotateY(10deg) scale(1.02); }
+}
+
+/* Utility Classes */
+.dragon-fire-bg {
+  background: linear-gradient(45deg, var(--dragon-fire), var(--dragon-gold), var(--dragon-fire));
+  background-size: 200% 200%;
+  animation: dragonFire 3s ease-in-out infinite;
+}
+
+.dragon-scale-hover:hover {
+  animation: dragonScale 0.6s ease-in-out;
+}
+
+.dragon-glow {
+  animation: dragonGlow 2s ease-in-out infinite;
+}
+
+.dragon-breath {
+  animation: dragonBreath 2s ease-in-out infinite;
+}
+
+.dragon-wing {
+  animation: dragonWing 1.5s ease-in-out infinite;
+}
+
+.dragon-gradient {
+  background: linear-gradient(135deg, 
+    var(--dragon-fire) 0%, 
+    var(--dragon-gold) 25%, 
+    var(--dragon-emerald) 50%, 
+    var(--dragon-purple) 75%, 
+    var(--dragon-crimson) 100%);
+}
+
+.dragon-text-gradient {
+  background: linear-gradient(45deg, var(--dragon-gold), var(--dragon-fire), var(--dragon-emerald));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dragon-border {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--dragon-fire), var(--dragon-gold), var(--dragon-emerald)) 1;
+}
+
+.dragon-shadow {
+  box-shadow: 0 10px 30px rgba(255, 69, 0, 0.3), 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.dragon-card {
+  background: linear-gradient(135deg, 
+    rgba(26, 15, 10, 0.9) 0%, 
+    rgba(45, 24, 16, 0.9) 50%, 
+    rgba(26, 15, 10, 0.9) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.dragon-button {
+  background: linear-gradient(45deg, var(--dragon-fire), var(--dragon-gold));
+  border: 2px solid var(--dragon-gold);
+  color: var(--dragon-dark);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.dragon-button:hover {
+  background: linear-gradient(45deg, var(--dragon-gold), var(--dragon-fire));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+}
+
+.dragon-number {
+  background: linear-gradient(135deg, var(--dragon-gold), var(--dragon-fire));
+  border: 3px solid var(--dragon-emerald);
+  color: var(--dragon-dark);
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.dragon-number:hover {
+  background: linear-gradient(135deg, var(--dragon-emerald), var(--dragon-gold));
+  border-color: var(--dragon-fire);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 30px rgba(80, 200, 120, 0.7);
+}
+
+.dragon-number.selected {
+  background: linear-gradient(135deg, var(--dragon-fire), var(--dragon-crimson));
+  border-color: var(--dragon-gold);
+  animation: dragonGlow 1s ease-in-out infinite;
+}
+
+.dragon-winner {
+  background: linear-gradient(45deg, var(--dragon-gold), var(--dragon-emerald), var(--dragon-gold));
+  background-size: 200% 200%;
+  animation: dragonFire 2s ease-in-out infinite;
+  border: 3px solid var(--dragon-fire);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+}
+
+/* Custom Scrollbar - Dragon Theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dragon-dark);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--dragon-fire), var(--dragon-gold));
+  border-radius: 6px;
+  border: 2px solid var(--dragon-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--dragon-gold), var(--dragon-emerald));
+}
+
+/* Dragon Meme Styles */
+.dragon-meme-text {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+}
+
+.dragon-epic {
+  background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd700, #50c878, #4169e1, #8a2be2);
+  background-size: 300% 300%;
+  animation: dragonFire 4s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Dragon Effects */
+@media (max-width: 768px) {
+  .dragon-glow {
+    animation-duration: 3s;
+  }
+  
+  .dragon-number:hover {
+    transform: scale(1.05) rotate(2deg);
+  }
+}
