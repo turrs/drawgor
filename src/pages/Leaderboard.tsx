@@ -295,7 +295,7 @@ const Leaderboard: React.FC = () => {
       {/* Leaderboard */}
       <div className="dragon-card rounded-xl overflow-hidden dragon-shadow">
         <div className="px-4 py-3 md:px-6 md:py-4 border-b border-amber-500/30 dragon-fire-bg">
-          <h2 className="text-lg md:text-2xl font-bold text-black dragon-meme-text">
+          <h2 className="text-lg md:text-2xl font-bold text-white dragon-meme-text">
             👑 HALL OF DRAGON CHAMPIONS
             {gameFilter !== 'all' && (
               <span className="ml-2 text-sm md:text-base">
@@ -390,7 +390,7 @@ const Leaderboard: React.FC = () => {
                   {/* Winnings - Right side on desktop, below on mobile */}
                   <div className="text-center md:text-right">
                     <div className={`text-xl md:text-2xl font-bold dragon-meme-text ${
-                      index < 3 ? 'text-black' : 'text-amber-300'
+                      index < 3 ? 'text-white' : 'text-amber-300'
                     }`}>
                       {stats.winnings.toFixed(2)} GOR
                     </div>

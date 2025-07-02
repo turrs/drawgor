@@ -500,12 +500,12 @@ const GameBoard: React.FC = () => {
                         />
                       </div>
                       <div className={`text-lg font-bold dragon-meme-text ${
-                        isSelected ? 'text-black' : isTaken ? 'text-gray-400' : 'text-amber-300'
+                        isSelected ? 'text-white' : isTaken ? 'text-gray-400' : 'text-amber-300'
                       }`}>
                         {number}
                       </div>
                       <div className={`text-xs font-bold ${
-                        isSelected ? 'text-black' : isTaken ? 'text-gray-500' : 'text-amber-400'
+                        isSelected ? 'text-white' : isTaken ? 'text-gray-500' : 'text-amber-400'
                       }`}>
                         {dragonName}
                       </div>

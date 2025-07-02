@@ -20,9 +20,21 @@ const Layout: React.FC = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 md:space-x-3 dragon-scale-hover">
               <div className="relative">
-                <Flame className="h-8 w-8 md:h-10 md:w-10 text-orange-500 dragon-breath" />
-                <div className="absolute inset-0 h-8 w-8 md:h-10 md:w-10 text-yellow-400 dragon-wing">
-                  <Flame className="h-8 w-8 md:h-10 md:w-10" />
+                <img 
+                  src="/dragon-logo.png" 
+                  alt="DrawGor Dragon Logo"
+                  className="h-12 w-12 md:h-16 md:w-16 object-contain dragon-breath"
+                  onError={(e) => {
+                    // Fallback to flame icon if image fails to load
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.nextElementSibling.style.display = 'block'
+                  }}
+                />
+                <div className="hidden">
+                  <Flame className="h-8 w-8 md:h-10 md:w-10 text-orange-500 dragon-breath" />
+                  <div className="absolute inset-0 h-8 w-8 md:h-10 md:w-10 text-yellow-400 dragon-wing">
+                    <Flame className="h-8 w-8 md:h-10 md:w-10" />
+                  </div>
                 </div>
               </div>
               <div>
@@ -115,7 +127,17 @@ const Layout: React.FC = () => {
         <div className="container mx-auto px-4 py-6 md:py-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-3">
-              <Flame className="h-5 w-5 md:h-6 md:w-6 text-orange-400 dragon-breath" />
+              <img 
+                src="/dragon-logo.png" 
+                alt="DrawGor Dragon Logo"
+                className="h-6 w-6 md:h-8 md:w-8 object-contain dragon-breath"
+                onError={(e) => {
+                  // Fallback to flame icon if image fails to load
+                  e.currentTarget.style.display = 'none'
+                  e.currentTarget.nextElementSibling.style.display = 'inline-block'
+                }}
+              />
+              <Flame className="h-5 w-5 md:h-6 md:w-6 text-orange-400 dragon-breath hidden" />
               <span className="text-amber-400 font-bold dragon-meme-text text-sm md:text-base">
                 DrawGor - 🐉 EPIC DRAGON DRAWS 🐉
               </span>

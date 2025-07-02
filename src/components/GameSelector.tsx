@@ -17,13 +17,13 @@ const GameSelector: React.FC<GameSelectorProps> = ({ selectedGame, onGameChange 
           onClick={() => onGameChange('drawgor')}
           className={`p-4 rounded-lg font-bold transition-all dragon-scale-hover border-2 ${
             selectedGame === 'drawgor'
-              ? 'dragon-fire-bg border-blue-400 dragon-glow text-black'
+              ? 'dragon-fire-bg border-blue-400 dragon-glow text-white'
               : 'dragon-card border-blue-500/50 text-blue-300 hover:border-blue-400 hover:bg-blue-900/30'
           }`}
         >
           <div className="flex flex-col items-center space-y-2">
             <Flame className={`h-8 w-8 ${selectedGame === 'drawgor' ? 'text-black' : 'text-blue-400'} dragon-breath`} />
-            <div className={`text-lg dragon-meme-text ${selectedGame === 'drawgor' ? 'text-black' : 'text-blue-300'}`}>
+            <div className={`text-lg dragon-meme-text ${selectedGame === 'drawgor' ? 'text-white' : 'text-blue-300'}`}>
               🐉 DRAWGOR
             </div>
             <div className={`text-xs text-center ${selectedGame === 'drawgor' ? 'text-black/80' : 'text-blue-400'}`}>
@@ -42,7 +42,7 @@ const GameSelector: React.FC<GameSelectorProps> = ({ selectedGame, onGameChange 
         >
           <div className="flex flex-col items-center space-y-2">
             <Swords className={`h-8 w-8 ${selectedGame === 'fightdragon' ? 'text-black' : 'text-red-400'} dragon-breath`} />
-            <div className={`text-lg dragon-meme-text ${selectedGame === 'fightdragon' ? 'text-black' : 'text-red-300'}`}>
+            <div className={`text-lg dragon-meme-text ${selectedGame === 'fightdragon' ? 'text-white' : 'text-red-300'}`}>
               ⚔️ FIGHT DRAGON
             </div>
             <div className={`text-xs text-center ${selectedGame === 'fightdragon' ? 'text-black/80' : 'text-red-400'}`}>

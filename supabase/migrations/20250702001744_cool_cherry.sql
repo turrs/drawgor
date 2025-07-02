@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS fight_dragon_battles (
   created_at timestamptz DEFAULT now(),
   start_time timestamptz NOT NULL,
   end_time timestamptz NOT NULL,
-  result_number integer CHECK (result_number IN (1, 10)), -- 1 for Dragon, 10 for Knight
+  result_number integer CHECK (result_number IN (1, 10)),
   status text CHECK (status IN ('waiting', 'active', 'completed')) DEFAULT 'waiting',
   total_players integer DEFAULT 0,
   total_amount decimal(10,4) DEFAULT 0
@@ -32,18 +32,22 @@ CREATE TABLE IF NOT EXISTS fight_dragon_players (
   id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   lobby_id uuid REFERENCES fight_dragon_battles(id) ON DELETE CASCADE,
   wallet_address text NOT NULL,
-  selected_number integer CHECK (selected_number IN (1, 10)) NOT NULL, -- 1 for Dragon, 10 for Knight
-  transaction_hash text COMMENT 'Transaction hash for battle entry payment',
+  selected_number integer CHECK (selected_number IN (1, 10)) NOT NULL,
+  transaction_hash text,
   is_winner boolean DEFAULT false,
   prize_amount decimal(10,4) DEFAULT 0,
   created_at timestamptz DEFAULT now(),
   reward_claimed boolean DEFAULT false,
-  reward_transaction_hash text COMMENT 'Transaction hash for reward claim payout'
+  reward_transaction_hash text
 );
 
 -- Add table comments
 COMMENT ON TABLE fight_dragon_battles IS 'Battle sessions for Fight Dragon game mode';
 COMMENT ON TABLE fight_dragon_players IS 'Player entries for Fight Dragon battles';
+
+-- Add column comments
+COMMENT ON COLUMN fight_dragon_players.transaction_hash IS 'Transaction hash for battle entry payment';
+COMMENT ON COLUMN fight_dragon_players.reward_transaction_hash IS 'Transaction hash for reward claim payout';
 
 -- Create indexes for performance
 CREATE INDEX IF NOT EXISTS idx_fight_dragon_battles_status ON fight_dragon_battles(status);

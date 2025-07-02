@@ -491,7 +491,7 @@ Join the dragon battles at DrawGor! 🔥
 
           {totalUnclaimed > 0 && (
             <div className="mt-6 p-4 dragon-fire-bg rounded-lg text-center dragon-glow">
-              <p className="text-black font-bold text-lg dragon-meme-text mb-2">
+              <p className="text-white font-bold text-lg dragon-meme-text mb-2">
                 🐉 You have {totalUnclaimed.toFixed(4)} GOR in unclaimed dragon treasure!
               </p>
               <a
@@ -522,7 +522,7 @@ Join the dragon battles at DrawGor! 🔥
                 stats.totalCombinedWins >= 1 ? 'text-black dragon-wing' : 'text-gray-500'
               }`} />
               <div className={`text-sm font-bold dragon-meme-text ${
-                stats.totalCombinedWins >= 1 ? 'text-black' : 'text-gray-400'
+                stats.totalCombinedWins >= 1 ? 'text-white' : 'text-gray-400'
               }`}>
                 🥇 FIRST VICTORY
               </div>
@@ -538,7 +538,7 @@ Join the dragon battles at DrawGor! 🔥
                 stats.gamesWon >= 1 && stats.fightDragonWins >= 1 ? 'text-black dragon-breath' : 'text-gray-500'
               }`} />
               <div className={`text-sm font-bold dragon-meme-text ${
-                stats.gamesWon >= 1 && stats.fightDragonWins >= 1 ? 'text-black' : 'text-gray-400'
+                stats.gamesWon >= 1 && stats.fightDragonWins >= 1 ? 'text-white' : 'text-gray-400'
               }`}>
                 ⚔️ MULTI-GAME MASTER
               </div>
@@ -554,7 +554,7 @@ Join the dragon battles at DrawGor! 🔥
                 stats.totalCombinedWins >= 10 ? 'text-black dragon-wing' : 'text-gray-500'
               }`} />
               <div className={`text-sm font-bold dragon-meme-text ${
-                stats.totalCombinedWins >= 10 ? 'text-black' : 'text-gray-400'
+                stats.totalCombinedWins >= 10 ? 'text-white' : 'text-gray-400'
               }`}>
                 🎰 HIGH ROLLER
               </div>
@@ -570,7 +570,7 @@ Join the dragon battles at DrawGor! 🔥
                 stats.totalCombinedWins >= 50 ? 'text-black dragon-breath' : 'text-gray-500'
               }`} />
               <div className={`text-sm font-bold dragon-meme-text ${
-                stats.totalCombinedWins >= 50 ? 'text-black' : 'text-gray-400'
+                stats.totalCombinedWins >= 50 ? 'text-white' : 'text-gray-400'
               }`}>
                 👑 DRAGON LEGEND
               </div>

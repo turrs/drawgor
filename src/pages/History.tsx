@@ -451,8 +451,8 @@ Join the dragon ${game.game_type === 'drawgor' ? 'draws' : 'battles'} and claim 
                   <Gift className="h-8 w-8 text-black" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-black dragon-meme-text">🏆 UNCLAIMED DRAGON TREASURES</h2>
-                  <p className="text-black/80 font-semibold">
+                  <h2 className="text-2xl font-bold text-white dragon-meme-text">🏆 UNCLAIMED DRAGON TREASURES</h2>
+                  <p className="text-white font-semibold">
                     {unclaimedRewards.length} treasure{unclaimedRewards.length !== 1 ? 's' : ''} awaiting your claim!
                   </p>
                 </div>
@@ -469,7 +469,7 @@ Join the dragon ${game.game_type === 'drawgor' ? 'draws' : 'battles'} and claim 
                         {getGameIcon(reward.gameType)}
                       </div>
                       <div>
-                        <div className="text-black font-bold text-xl dragon-meme-text">
+                        <div className="text-white font-bold text-xl dragon-meme-text">
                           {reward.prizeAmount.toFixed(4)} GOR
                         </div>
                         <div className="text-black/70 font-semibold text-sm">
